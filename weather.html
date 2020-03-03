@@ -9,6 +9,65 @@
   <script src="script.js"></script>
 </head>
 <body>
+    <html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="Weather.js"></script>
+        <link rel="stylesheet" href="Weather.css">
+        <title>Weather Dashboard</title>
+        </head>
+        <body>
+        <header></header>
+        <div class="Andrew-Weather-Container">
+           
+            <div class="jumbotron">
+                
+                <h1>Weather Dashboard</h1>
+            
+                <div id="Andys-cityname"></div>
+                <div id="Andys-tempurature"></div>
+                <div id="Andys-humidity"></div>
+                <div id="Andys-windspeed"></div>
+                <div id="Andys-uvindex"></div>
+        
+            </div>
+        
+            <div id="Andys-forecast">
+        
+                </div>
+        
+        
+        </div>
+        
+        <div class="searchbar">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" name="myText" id="myText" value="" placeholder="Search ZIP" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" id="btn">Search</button>
+            </form>
+          </nav>
+        </div>
+        
+        <div class="row">
+            <div class="col-3">
+              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Austin</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Chicago</a>
+                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">New York</a>
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Orlando</a>
+                <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">San Francisco</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Seattle</a>
+                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Denver</a>
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Atlanta</a>
+            </div>
+            </div>
+          
+            
+        
+        </div></body></html>
     
 </body>
 </html>
