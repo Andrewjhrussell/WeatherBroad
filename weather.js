@@ -1,12 +1,42 @@
+var apiKey="d73520d80a488bd40dc0c091724b64fa"
 var localData = localStorage.getItem("weather")
 if (!localData) {
     localData = []
 } else {
     localData = JSON.parse(localData)
 }
+
+function get5Day(city){
+        $.get("https://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=imperial&appid="+apiKey, function(weather){
+            $("#Andys-forecast").empty()
+            for (let i = 0; i < weather.list.length; i++) {
+                var currHour = weather.list[i]
+                if(currHour.dt_txt.includes("12:00:00")){
+                    console.log(currHour)
+                    var dayCard = $("<div class='card bg-primary mx-1 text-white'>").text(moment.unix(currHour.dt).format("l"))
+                    var temp5 = $("<div>").text("Temp: " + currHour.main.temp + "°F")
+                    var icon5 = "https://api.openweathermap.org/img/w/" + currHour.weather[0].icon + ".png";
+                    var img5 =$("<img>").attr("src", icon5);
+                    img5.attr("width", "50px")
+                    var humid5 = $("<div>").text("Humidity: "  + currHour.main.humidity + "%")
+                    
+                    var wind5 =  $("<div>").text("Wind: "  + currHour.wind.speed + "mph")
+                      
+                    dayCard.append(img5,temp5, humid5, wind5)
+                    
+                    $("#Andys-forecast").append(dayCard)
+                }
+                
+            }
+        })
+    // some api call
+
+    
+
+}
 function getWeather(city) {
-    $.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=d73520d80a488bd40dc0c091724b64fa", function (data) {
-        $.get("http://api.openweathermap.org/data/2.5/uvi?appid=d73520d80a488bd40dc0c091724b64fa&lat="+data.coord.lat+"&lon="+data.coord.lon, function (uv) {
+    $.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID="+apiKey, function (data) {
+        $.get("https://api.openweathermap.org/data/2.5/uvi?appid="+apiKey+"&lat="+data.coord.lat+"&lon="+data.coord.lon, function (uv) {
 
             console.log(data)
             var curr = $("#currentWeather")
@@ -24,15 +54,14 @@ function getWeather(city) {
 
 
             curr.append(newH2,temp, humidity, wind, uv)
+
         }
-        );
+        );  
     })
+    get5Day(city)
 }
 
-    // some api call
-    var dayCard = $("<div class='card bg-primary'>").text("Test:" )
-    $("#Andys-forecast").append(dayCard)
-
+    
    
 function newCityClick(clickCity) {
     getWeather(clickCity)
