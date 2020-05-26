@@ -12,7 +12,6 @@ function get5Day(city){
             for (let i = 0; i < weather.list.length; i++) {
                 var currHour = weather.list[i]
                 if(currHour.dt_txt.includes("12:00:00")){
-                    console.log(currHour)
                     var dayCard = $("<div class='card bg-primary mx-1 text-white'>").text(moment.unix(currHour.dt).format("l"))
                     var temp5 = $("<div>").text("Temp: " + currHour.main.temp + "°F")
                     var icon5 = "https://api.openweathermap.org/img/w/" + currHour.weather[0].icon + ".png";
@@ -38,7 +37,7 @@ function getWeather(city) {
     $.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID="+apiKey, function (data) {
         $.get("https://api.openweathermap.org/data/2.5/uvi?appid="+apiKey+"&lat="+data.coord.lat+"&lon="+data.coord.lon, function (uv) {
 
-            console.log(data)
+           
             var curr = $("#currentWeather")
             curr.empty()
             var newH2 = $("<h2>").text(data.name)
@@ -86,7 +85,6 @@ $("#citySearch").submit(function (event) {
     event.preventDefault()
     var cityName = $("#cityName").val()
     if (cityName === "") return
-    console.log(cityName)
 
     localData.push(cityName)
     localStorage.setItem("weather", JSON.stringify(localData))
