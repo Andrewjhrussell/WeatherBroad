@@ -2,28 +2,20 @@
 
 Repository Github link
 The Github Repo is at: https://github.com/Andrewjhrussell/WeatherBroad.git
+The Link to website :  https://andrewjhrussell.github.io/WeatherBroad/.
 
 Title:
-Weather Dashboard
+WeatherBroad
 
 Badges
 Description
-In this assignment, I create a
+In this assignment,the API is retrieved from another API application. The API retrieve weather data for cities. Weather dashboard input form allows the user get data as far as current weather conditions for that city ,UV color data ,5 day forecast that displays the date, temperature, humidity.
 
 Table of contents
 Title, Description, Table Of Content, Installion, Usage, License, Contribution Test, Question, Demo
 
-Installation
-
-
 Usage
-This Website lets users input the names of burgers they'd like to eat.
-
-Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured.
-
-Each burger in the waiting area also has a Devour it! button. When the user clicks it, the burger will move to the right side of the page.
-
-Your app will store every burger in a database
+This Website lets users input the names of cities for weather conditions.
 
 License
 MIT License
